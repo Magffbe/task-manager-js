@@ -6,7 +6,7 @@ A responsive and interactive Task Manager web application built with **Vanilla J
 
 ### 🚀 Live Demo
 
-[**Click here to test the app**](https://unrivaled-sunburst-1d5020.netlify.app/)
+[**Click here to test the app**](https://taskmanagerfabidev.netlify.app/)
 
 ---
 
