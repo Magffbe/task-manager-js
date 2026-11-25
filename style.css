@@ -1,30 +1,379 @@
-body {
-  font-family: Arial, sans-serif;
-}
 
-ul {
-  list-style: none;
+/* ==============================
+   1. Global Styles
+================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
   padding: 0;
 }
 
-li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 8px 0;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6fb;
+  color: #1e293b;
+  min-height: 100vh;
+  line-height: 1.6;
 }
 
-li span {
-  cursor: pointer;
+/* ==============================
+   2. Header
+================================= */
+
+.app-header {
+  text-align: center;
+  padding: 40px 20px 25px;
 }
+
+.app-header h1 {
+  font-size: 32px;
+  color: #1e293b;
+  margin-bottom: 5px;
+}
+
+.app-header p {
+  color: #64748b;
+  font-size: 15px;
+}
+
+/* ==============================
+   3. Main Container
+================================= */
+
+.app-container {
+  width: 90%;
+  max-width: 750px;
+  margin: 0 auto 40px;
+}
+
+/* ==============================
+   4. Sections
+================================= */
+
+.task-form-section,
+.task-list-section {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.05);
+  margin-bottom: 25px;
+}
+
+.task-form-section h2,
+.task-list-section h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+/* ==============================
+   5. Form
+================================= */
+
+#task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #1e293b;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+/* ==============================
+   6. Buttons
+================================= */
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.add-task-btn {
+  align-self: flex-start;
+  padding: 11px 20px;
+  background-color: #4f46e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.add-task-btn:hover {
+  background-color: #4338ca;
+}
+
+/* ==============================
+   7. Task Filters
+================================= */
+
+.task-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.task-filters button {
+  padding: 8px 16px;
+  background-color: #f1f5f9;
+  color: #475569;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.task-filters button:hover {
+  background-color: #e2e8f0;
+}
+
+.task-filters button.active {
+  background-color: #4f46e5;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.task-filters button:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 3px;
+}
+
+/* ==============================
+   8. Task List
+================================= */
+
+#task-list {
+  list-style: none;
+}
+
+#task-list li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+#task-list li:last-child {
+  border-bottom: none;
+}
+
+#task-list li span:first-child {
+  flex: 1;
+  min-width: 120px;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+/* ==============================
+   Empty State
+================================= */
+
+#task-list li.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  padding: 35px 15px;
+  border: none;
+  background-color: #f8fafc;
+  border-radius: 10px;
+}
+
+.empty-state h3 {
+  color: #334155;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.empty-state p {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* ==============================
+   9. Task Status
+================================= */
 
 .completed {
   text-decoration: line-through;
-  color: gray;
+  color: #94a3b8;
 }
 
-button {
-  margin-left: 10px;
-  cursor: pointer;
+/* ==============================
+   10. Task Categories and Dates
+================================= */
+
+.task-category {
+  padding: 4px 10px;
+  background-color: #eef2ff;
+  color: #4f46e5;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
+/* Category Colors */
+
+.category-work {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.category-personal {
+  background-color: #fce7f3;
+  color: #be185d;
+}
+
+.category-study {
+  background-color: #ede9fe;
+  color: #6d28d9;
+}
+
+.task-due-date {
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* ==============================
+   11. Task Action Buttons
+================================= */
+
+#task-list li button {
+  margin-left: 0;
+  padding: 7px 10px;
+  border: none;
+  border-radius: 7px;
+  background-color: #f1f5f9;
+  font-size: 14px;
+}
+
+#task-list li button:hover {
+  background-color: #e2e8f0;
+}
+
+/* Edit Button */
+#task-list li button.edit-btn {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+#task-list li button.edit-btn:hover {
+  background-color: #bfdbfe;
+}
+
+/* Delete Button */
+#task-list li button.delete-btn {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+#task-list li button.delete-btn:hover {
+  background-color: #fecaca;
+}
+
+/* ==============================
+   12. Edit Form
+================================= */
+
+.edit-form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+
+.edit-form input,
+.edit-form select {
+  min-width: 0;
+  flex: 1;
+  padding: 9px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font-family: inherit;
+}
+
+.edit-form button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 7px;
+  background-color: #4f46e5;
+  color: #ffffff;
+}
+
+.edit-form button:last-child {
+  background-color: #64748b;
+}
+
+/* ==============================
+   13. Responsive Design
+================================= */
+
+@media (max-width: 600px) {
+
+  .app-header {
+    padding: 30px 15px 20px;
+  }
+
+  .app-header h1 {
+    font-size: 26px;
+  }
+
+  .app-container {
+    width: 94%;
+  }
+
+  .task-form-section,
+  .task-list-section {
+    padding: 18px;
+  }
+
+  #task-list li {
+    gap: 8px;
+  }
+
+  .edit-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .edit-form input,
+  .edit-form select,
+  .edit-form button {
+    width: 100%;
+  }
+}
