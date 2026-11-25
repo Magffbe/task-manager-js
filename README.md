@@ -1,35 +1,77 @@
 # 📝 Task Manager JS
 
-A lightweight, interactive Task Manager web application built with **Vanilla JavaScript**, **HTML5**, and **CSS3**. It features inline editing, task completion toggling, and data persistence using browser `LocalStorage`.
+A responsive and interactive Task Manager web application built with **Vanilla JavaScript**, **HTML5**, and **CSS3**. It allows users to organize daily tasks by category, manage deadlines, track completion status, and store data locally using browser `LocalStorage`.
 
 ---
 
 ### 🚀 Live Demo
-[![Live Demo](https://img.shields.io/badge/Netlify-Live_Demo-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://unrivaled-sunburst-1d5020.netlify.app)
 
-👉 **[Click here to test the app](https://unrivaled-sunburst-1d5020.netlify.app)**
+[**Click here to test the app**](https://unrivaled-sunburst-1d5020.netlify.app/)
 
 ---
 
 ### ✨ Key Features
-* ➕ **Add Tasks:** Create new tasks easily using form submission validation.
-* ✏️ **Inline Editing:** Edit existing tasks directly by clicking the edit icon (`✎`), with instant saving on `Enter` or `blur`, and cancellation on `Escape`.
-* ✔️ **Toggle Completion:** Mark tasks as completed or pending with a simple click on the task text.
-* 🗑️ **Delete Tasks:** Remove individual tasks dynamically from the list.
-* 💾 **LocalStorage Persistence:** Automatic saving ensures your tasks remain available even after refreshing or closing the browser.
-* ⚡ **Dynamic DOM Rendering:** Single-source-of-truth state management that re-renders the UI seamlessly.
+
+- ➕ **Add Tasks:** Create new tasks with form validation.
+- ✏️ **Edit Tasks:** Update existing task descriptions, categories, and due dates.
+- ✔️ **Toggle Completion:** Mark tasks as completed or active.
+- 🗑️ **Delete Tasks:** Remove individual tasks from the list.
+- 🏷️ **Task Categories:** Organize tasks into three categories: Work, Personal, and Study, each with its own visual styling.
+- 📅 **Due Dates:** Assign optional deadlines to tasks.
+- 🔍 **Task Filtering:** Filter tasks by All, Active, and Completed status.
+- 📭 **Empty State Messages:** Display contextual messages when no tasks match the selected filter.
+- 💾 **LocalStorage Persistence:** Automatically save tasks and preserve them after refreshing or reopening the browser.
+- 🛡️ **Data Validation and Recovery:** Validate task information, normalize stored data, recover from invalid LocalStorage data, and prevent duplicate task IDs.
+- ⚡ **Dynamic DOM Rendering:** Update the interface dynamically while maintaining a centralized task state.
+
+---
+
+### 🎨 User Interface
+
+- 📊 **Dashboard Layout:** Display task statistics and organize the application interface.
+- 📱 **Responsive Design:** Adapt the layout to desktop and mobile screens.
+- 🎨 **Visual Feedback:** Differentiate task categories, active filters, and task actions through consistent styling.
+- 🧩 **Adaptive Forms:** Provide responsive forms for creating and editing tasks.
 
 ---
 
 ### 🛠️ Tech Stack
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+- **HTML5:** Semantic structure and accessible form elements.
+- **CSS3:** Responsive layouts, styling, and visual states.
+- **Vanilla JavaScript:** Task management, validation, DOM manipulation, and application logic.
+- **LocalStorage:** Client-side data persistence.
 
 ---
 
 ### 💻 How to Run Locally
 
 1. **Clone the repository:**
+
    ```bash
-   git clone [https://github.com/Magffbe/task-manager-js.git](https://github.com/Magffbe/task-manager-js.git)
+   git clone https://github.com/Magffbe/task-manager-js.git
+   ```
+
+2. **Navigate to the project folder:**
+
+   ```bash
+   cd task-manager-js
+   ```
+
+3. **Run the application:**
+
+   Open `index.html` in your browser.
+
+   No additional dependencies or build tools are required.
+
+---
+
+### 📌 Project Status
+
+**Version:** 1.0.0
+
+**Status:** Completed
+
+This version includes the core task management functionality, responsive interface, data validation, and LocalStorage persistence.
+
+Future improvements may be considered in subsequent versions.
